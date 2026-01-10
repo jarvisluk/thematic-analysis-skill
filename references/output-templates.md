@@ -2,34 +2,28 @@
 
 ## Participant list
 
-- P1
-- P2
-- P3
-
-Example mapping when each TXT file is one participant:
-
-- P1 = transcript_01.txt
-- P2 = transcript_02.txt
-- P3 = transcript_03.txt
-
-## Codebook table
-
-Columns: Code | Definition | Inclusion | Exclusion | Example quote | Participant
+Columns: Participant | Transcript file | Output folder
 
 Markdown example:
 
-| Code | Definition | Inclusion | Exclusion | Example quote | Participant |
-| --- | --- | --- | --- | --- | --- |
-| Schedule pressure | Mentions of tight timelines or deadline stress | Deadlines, lack of time | General workload with no time reference | "We had to finish in two days, so everything felt rushed..." | P2 |
+| Participant | Transcript file | Output folder |
+| --- | --- | --- |
+| P01 | transcript_01.txt | P1 |
+| P02 | transcript_02.txt | P2 |
+| P03 | transcript_03.txt | P3 |
 
-CSV example:
+## Code table
 
-```csv
-Code,Definition,Inclusion,Exclusion,Example quote,Participant
-Schedule pressure,Mentions of tight timelines or deadline stress,Deadlines or lack of time,General workload with no time reference,"We had to finish in two days, so everything felt rushed...",P2
-```
+Columns: Code | Definition | Example quote | Participant
 
-## Themes table
+Markdown example:
+
+| Code | Definition | Example quote | Participant |
+| --- | --- | --- | --- |
+| Schedule pressure | Mentions of tight timelines or deadline stress | "We had to finish in two days, so everything felt rushed..." | P2 |
+
+
+## Themes table (final synthesis)
 
 Columns: Theme | Description | Supporting quotes | Participants
 
@@ -39,12 +33,24 @@ Markdown example:
 | --- | --- | --- | --- |
 | Time constraints | Participants describe limited time as shaping decisions and stress | "We had to finish in two days..." (P2); "No time to test properly..." (P3) | P2, P3 |
 
-CSV example:
+## Findings report (final synthesis)
 
-```csv
-Theme,Description,Supporting quotes,Participants
-Time constraints,"Participants describe limited time as shaping decisions and stress","We had to finish in two days... (P2); No time to test properly... (P3)","P2, P3"
+Write in Markdown. One section per theme with a narrative and supporting quotes. Example:
+
 ```
+### Coordination gaps during emergencies
+When emergencies occur, unclear roles slow down response. Participants described delays because no one was sure who would contact support or collect needed materials.
+
+> "People were willing to help, but nobody knew who should call for supplies" (P01)
+> "We lost time just figuring out who was in charge" (P02)
+
+### Openness to tools with safety conditions
+Participants welcomed new tools if they were simple and safe. Ease of use and low risk were mentioned more often than advanced features.
+
+> "I'll try a new tool if it doesn't get in the way" (P01)
+> "If it's safe and easy, I'm happy to use it" (P03)
+```
+
 
 ## Quote handling
 
