@@ -5,20 +5,25 @@ description: Thematic analysis of qualitative text (interview transcripts, open-
 
 # Thematic Analysis
 
+Path conventions:
+
+- `<transcripts-root>`: folder containing the transcripts and where all outputs are written.
+- `<skill-root>`: folder containing this SKILL.md and the helper scripts under `scripts/`.
+
 ## Workflow
 
-1. Confirm inputs and participant labeling.
+1. Confirm transcript folder path, inputs, and participant labeling.
+   - Require the transcript folder path at the start; if the user has not provided it, ask for it and do not proceed until it is supplied.
    - Treat each transcript file as one participant unless explicit labels are provided.
    - If no participant list is provided, label participants as P1, P2, P3... in the order transcripts are supplied.
-   - If a single transcript is provided, label it P1.
-   - If the provided participant list is missing entries or unclear, ask the user to provide a corrected list or approve creating one.
-   - Output the participants list immediately after labeling (save to `outputs/participants.md`).
+   - If the provided participant list is missing entries or unclear, ask the user to approve creating one.
+   - Output the participants list immediately after labeling (save to `<transcripts-root>/outputs/participants.md`).
 
 2. Process transcripts one at a time.
    - Analyze a single transcript per run.
    - Output results after each transcript is analyzed.
-   - Use participant IDs (P01, P02, ...) rather than filenames in outputs.
-   - Save per-transcript outputs directly under `outputs/` using the participant ID as the filename (e.g., `outputs/P1.md`).
+   - Use participant IDs (P1, P2, ...) rather than filenames in outputs.
+   - Save per-transcript outputs directly under `<transcripts-root>/outputs/` using the participant ID as the filename (e.g., `<transcripts-root>/outputs/P1.md`).
 
 3. Light preprocessing.
    - Preserve original wording, even if grammar is imperfect.
@@ -38,19 +43,19 @@ description: Thematic analysis of qualitative text (interview transcripts, open-
    - Provide a participant list entry and a code table (meaning units with codes and quotes).
    - Include original sentences/quotes and participant identifiers in tables.
    - Output tables in Markdown only.
-   - Save outputs as `outputs/<participant-id>.md` (e.g., `outputs/P1.md`), no subfolders.
-   - Maintain `outputs/participants.md` as the canonical mapping of participant IDs, transcript filenames, and output filenames.
+   - Save outputs as `<transcripts-root>/outputs/<participant-id>.md` (e.g., `<transcripts-root>/outputs/P1.md`), no subfolders.
+   - Maintain `<transcripts-root>/outputs/participants.md` as the canonical mapping of participant IDs, transcript filenames, and output filenames.
 
 7. Merge and validate after all transcripts are coded.
-   - Merge all per-transcript code tables into `outputs/final/codes.md`.
-   - Develop the final themes table (`outputs/final/themes.md`) as a summary of codes.
-   - Run `scripts/validate_quotes.py --outputs outputs --transcripts-root <root>` to check quotes in the merged codes and themes.
-   - Review `outputs/final/quote-check.md` for validation results.
+   - Run `<skill-root>/scripts/merge_codes.py --outputs <transcripts-root>/outputs` to merge all per-transcript code tables into `<transcripts-root>/outputs/final/codes.md`.
+   - Develop the final themes table (`<transcripts-root>/outputs/final/themes.md`) as a summary of codes.
+   - Run `<skill-root>/scripts/validate_quotes.py --outputs <transcripts-root>/outputs --transcripts-root <transcripts-root>` to check quotes in the merged codes and themes.
+   - Review `<transcripts-root>/outputs/final/quote-check.md` for validation results.
 
 8. Final synthesis across transcripts.
    - After validation, produce a findings report in Markdown that summarizes themes across participants.
-   - Write one section per theme with a brief narrative and representative quotes (keep participant IDs as P01, P02, ...).
-   - Save final outputs into `outputs/final/` (`findings.md`, `codes.md`, `themes.md`, `quote-check.md`).
+   - Write one section per theme with a brief narrative and representative quotes (keep participant IDs as P1, P2, ...).
+   - Save final outputs into `<transcripts-root>/outputs/final/` (`findings.md`, `codes.md`, `themes.md`, `quote-check.md`).
 
 ## Output formats
 
@@ -64,9 +69,9 @@ description: Thematic analysis of qualitative text (interview transcripts, open-
 ## Output hierarchy
 
 ```
-outputs/
+<transcripts-root>/outputs/
   participants.md
-  <participant-id>.md  # e.g., P01.md
+  <participant-id>.md  # e.g., P1.md
   final/
     codes.md
     themes.md
