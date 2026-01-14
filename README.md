@@ -4,7 +4,7 @@ An LLM Skill that enables systematic analysis of qualitative text data (intervie
 
 ## To-Do
 - [ ] quote check script
-- [ ] merge code with .py
+- [x] merge code with .py
 - [ ] update thematic-workflow.md
 - [X] output participants list after first step
 - [X] use P1 instead of file name in output
