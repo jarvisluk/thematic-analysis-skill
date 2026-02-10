@@ -8,9 +8,9 @@ Markdown example:
 
 | Participant | Transcript file | Output folder |
 | --- | --- | --- |
-| P01 | transcript_01.txt | P1 |
-| P02 | transcript_02.txt | P2 |
-| P03 | transcript_03.txt | P3 |
+| P1 | transcript_01.txt | P1 |
+| P2 | transcript_02.txt | P2 |
+| P3 | transcript_03.txt | P3 |
 
 ## Code table
 
@@ -41,14 +41,14 @@ Write in Markdown. One section per theme with a narrative and supporting quotes.
 ### Coordination gaps during emergencies
 When emergencies occur, unclear roles slow down response. Participants described delays because no one was sure who would contact support or collect needed materials.
 
-> "People were willing to help, but nobody knew who should call for supplies" (P01)
-> "We lost time just figuring out who was in charge" (P02)
+> "People were willing to help, but nobody knew who should call for supplies" (P1)
+> "We lost time just figuring out who was in charge" (P2)
 
 ### Openness to tools with safety conditions
 Participants welcomed new tools if they were simple and safe. Ease of use and low risk were mentioned more often than advanced features.
 
-> "I'll try a new tool if it doesn't get in the way" (P01)
-> "If it's safe and easy, I'm happy to use it" (P03)
+> "I'll try a new tool if it doesn't get in the way" (P1)
+> "If it's safe and easy, I'm happy to use it" (P3)
 ```
 
 
